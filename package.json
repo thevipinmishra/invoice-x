@@ -1,0 +1,28 @@
+{
+  "name": "invoice-x",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:frontend": "pnpm --filter invoice-x-fe dev",
+    "dev:backend": "pnpm --filter invoice-x-be dev",
+    "dev": "concurrently 'pnpm run dev:backend' 'pnpm run dev:frontend'",
+    "build:frontend": "pnpm --filter invoice-x-fe build",
+    "build:backend": "pnpm --filter invoice-x-be build",
+    "build": "concurrently 'pnpm run build:backend' 'pnpm run build:frontend'",
+    "lint:frontend": "pnpm --filter invoice-x-fe lint",
+    "lint": "pnpm run lint:frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
